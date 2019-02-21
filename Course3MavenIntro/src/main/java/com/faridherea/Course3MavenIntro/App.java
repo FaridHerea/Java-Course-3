@@ -6,12 +6,14 @@ import com.sun.net.httpserver.HttpServer;
 
 public class App 
 {
+	@SuppressWarnings("restriction")
     public static void main( String[] args ) throws IOException {
         //create webserver service
     	HttpServer server = HttpServer.create(new InetSocketAddress(8001), 0);
     	//set handler to specified path
     	server.createContext("/", new MyStringHandler());
-    	server.createContext("/html", new MyHtmlHandler());
+    	server.createContext("/html/", new MyHtmlHandler());
+    	server.createContext("/index/", new MyHtmlIndex());
     	//creates a default executor
     	server.setExecutor(null);
     	//start the server

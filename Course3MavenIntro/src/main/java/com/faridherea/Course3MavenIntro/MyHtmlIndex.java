@@ -1,11 +1,13 @@
 package com.faridherea.Course3MavenIntro;
 
+import java.io.*;
+import java.util.*;
 import java.io.IOException;
 import java.io.OutputStream;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 @SuppressWarnings("restriction")
-public class MyHtmlHandler implements HttpHandler{
+public class MyHtmlIndex implements HttpHandler{
 	public void handle(HttpExchange t) throws IOException{
 		//set the response as a string containing html code
 		String response = "<html><body><h1>Response from '/html' servlet</h1><br><br><span>Some text added just as an example</span></body></html>";
