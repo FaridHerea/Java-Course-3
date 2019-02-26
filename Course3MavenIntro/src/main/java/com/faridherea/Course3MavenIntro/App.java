@@ -1,5 +1,6 @@
 package com.faridherea.Course3MavenIntro;
 
+import java.util.Scanner;
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import com.sun.net.httpserver.HttpServer;
@@ -13,7 +14,7 @@ public class App
     	//set handler to specified path
     	server.createContext("/", new MyStringHandler());
     	server.createContext("/html/", new MyHtmlHandler());
-    	server.createContext("/index/", new MyHtmlIndex());
+    	server.createContext("/index/", new IndexHandler());
     	//creates a default executor
     	server.setExecutor(null);
     	//start the server
